@@ -79,7 +79,9 @@ public class GlipWalletDemoBehaviour : MonoBehaviour,
     }
 
     public void OnMessageSigned(string signedMessage) {
+        Debug.Log("glipwallet: Signed message: " + signedMessage);
         _message.text = "Signed message: " + signedMessage;
+        setConnectedInfo();
     }
 
     public void OnSignMessageCancelled() {
@@ -88,6 +90,7 @@ public class GlipWalletDemoBehaviour : MonoBehaviour,
 
     public void OnTransactionSigned(string signedTransaction) {
         _message.text = "Signed tx: " + signedTransaction;
+        setConnectedInfo();
 
     }
     public void OnSignTransactionCancelled() {
@@ -96,6 +99,7 @@ public class GlipWalletDemoBehaviour : MonoBehaviour,
 
     public void OnTransactionSent(string tx) {
         _message.text = "Sent tx: " + tx;
+        setConnectedInfo();
     }
 
     public void OnSendTransactionCancelled() {

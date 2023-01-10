@@ -80,7 +80,7 @@ public class GlipWallet : MonoBehaviour {
     public static void Logout(WalletLogoutListener listener) {
         walletLogoutListener = listener;
         string url =
-            BASE_URL + "?action=logout&provider=google&redirect_scheme="+redirectScheme;
+            BASE_URL + "?action=logout&provider=google&clientId="+clientId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Login url: " + url);
         Application.OpenURL(url);
     }
@@ -94,7 +94,7 @@ public class GlipWallet : MonoBehaviour {
         walletSignMessageListener = listener;
         string encodedMessage = Convert.ToBase64String(Encoding.UTF8.GetBytes(message));
         string url =
-            BASE_URL + "?action=signMessage&message="+encodedMessage+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
+            BASE_URL + "?action=signMessage&message="+encodedMessage+"&clientId="+clientId+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Signing message url: " + url);
         Application.OpenURL(url);
     }
@@ -103,7 +103,7 @@ public class GlipWallet : MonoBehaviour {
         walletSignMessageListener = listener;
         string encodedMessage = Convert.ToBase64String(Encoding.UTF8.GetBytes(message));
         string url =
-            BASE_URL + "?action=signPersonalMessage&message="+encodedMessage+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
+            BASE_URL + "?action=signPersonalMessage&message="+encodedMessage+"&clientId="+clientId+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Signing personal message url: " + url);
         Application.OpenURL(url);
     }
@@ -112,7 +112,7 @@ public class GlipWallet : MonoBehaviour {
         walletSignTransactionListener = listener;
         string encodedMessage = Convert.ToBase64String(Encoding.UTF8.GetBytes(tx));
         string url =
-            BASE_URL + "?action=signTx&txData="+encodedMessage+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
+            BASE_URL + "?action=signTx&txData="+encodedMessage+"&clientId="+clientId+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Signing tx url: " + url);
         Application.OpenURL(url);
     }
@@ -121,7 +121,7 @@ public class GlipWallet : MonoBehaviour {
         walletSendTransactionListener = listener;
         string encodedMessage = Convert.ToBase64String(Encoding.UTF8.GetBytes(tx));
         string url =
-            BASE_URL + "?action=sendTx&txData="+encodedMessage+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
+            BASE_URL + "?action=sendTx&txData="+encodedMessage+"&clientId="+clientId+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Send tx url: " + url);
         Application.OpenURL(url);
     }
