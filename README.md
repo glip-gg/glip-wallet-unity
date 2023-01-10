@@ -8,7 +8,7 @@ Import `glipwallet.unitypackage` into your project. Download latest version from
 
 v1 - https://github.com/glip-gg/glip-wallet-unity/releases/download/v1/glipwallet.unitypackage
 
-Alternatively, You can also just add [GlipWallet.cs]('https://github.com/glip-gg/glip-wallet-unity/blob/main/Assets/GlipWallet/GlipWallet.cs') in your project
+Alternatively, You can also just add [GlipWallet.cs](https://github.com/glip-gg/glip-wallet-unity/blob/main/Assets/GlipWallet/GlipWallet.cs) in your project
 
 
  ### Initialization
@@ -22,7 +22,7 @@ Deeplink handling will also need to be setup for the redirect scheme that is pas
 
 ### Enable deeplinks for different platforms
 
-Follow the guide [here]('https://docs.unity3d.com/Manual/deep-linking.html') to setup deeplink handling for different platforms.
+Follow the guide [here](https://docs.unity3d.com/Manual/deep-linking.html) to setup deeplink handling for different platforms.
 
 Choose deeplink scheme according to your app's naming convention. An example for Android is provided in this demo project in `Assets/Plugins/Android/AndroidManifest.xml`
 
