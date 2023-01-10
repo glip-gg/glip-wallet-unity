@@ -63,8 +63,6 @@ public class GlipWallet : MonoBehaviour {
             BASE_URL + "?action=login&chain="+chainId+"&network=cyan&clientId="+clientId+"&provider=google&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Login url: " + url);
         Application.OpenURL(url);
-
-        // onDeepLinkActivated("glipwalletunitydemo://walletConnected?walletId=0xB4A4d9FeFC5208e616772Ffc821cEF3E8f1d3ff5&userInfo=%7B%22email%22:%22namandwivedi14@gmail.com%22,%22glipAccessToken%22:%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3YWxsZXRJZCI6IjB4QjRBNGQ5RmVGQzUyMDhlNjE2NzcyRmZjODIxY0VGM0U4ZjFkM2ZmNSIsImF1dGgiOnRydWUsImNvbXBhbnlJZCI6IjYyZmQwZTFiNWY2NTM1MzZlOWM2NTdhOCIsImlhdCI6MTY3MzAzNDQ2NiwiZXhwIjoxNzA0NTcwNDY2fQ.tj4rZj5c4kv_nS5qljrM_3iJLfJZsSlSGNfLrlqNXqk%22,%22googleIdToken%22:%22eyJhbGciOiJSUzI1NiIsImtpZCI6IjhlMGFjZjg5MWUwOTAwOTFlZjFhNWU3ZTY0YmFiMjgwZmQxNDQ3ZmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzNzMxOTY0NDY1MDAtb2p0M2tvMWdoaXM5cHJpdGZoaG9nb2hsb3R1dDJodjYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIzNzMxOTY0NDY1MDAtb2p0M2tvMWdoaXM5cHJpdGZoaG9nb2hsb3R1dDJodjYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTU5MTE2ODI5MzAxMTMwNzgzNTUiLCJlbWFpbCI6Im5hbWFuZHdpdmVkaTE0QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiTzE5X2ZhVGRHejB6ZklHdWc0Z3ZPQSIsIm5hbWUiOiJOYW1hbiBEd2l2ZWRpIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FFZEZUcDVxRk9paWJDaGE4RVBEb2ZKOU1IMEhpV0MxSzNSdGg3SElGaGNZbGc9czk2LWMiLCJnaXZlbl9uYW1lIjoiTmFtYW4iLCJmYW1pbHlfbmFtZSI6IkR3aXZlZGkiLCJsb2NhbGUiOiJlbiIsImlhdCI6MTY3MzAzNDQ2NCwiZXhwIjoxNjczMDM4MDY0fQ.kZ9Hw_EtCJw7C8tnuyzrmUJHFHMDhMC13gCrX9Ep6pH8YCKIUQfUTwoqHUcc4gZMIApphz1KpVELS3sUokMw-GR01P4pangoZ1pp4IUE9W6KqKBrCj-XsVlETOW-jYMsjeHWOjhfSIzAfd66i0NwI459iV5KkuRfGmiZ4w9AROwz9QhvObhyFUYYDLUKHZpFhP1Eg-VTHrAKb2py_X_QtkGXOJ-weXv2kQkrP3f2e27sjXmqbRJJQuX_02ZCMUrDh3oV5iXnHdR4cSXtvHT8JdsG8qNYHcw7qHODnxtBU8WKQvOq4BOsTwmya33VAv3lj7NXT3R_8LDpZTZ7TwCjxA%22,%22publicAddress%22:%220xB4A4d9FeFC5208e616772Ffc821cEF3E8f1d3ff5%22%7D");
     }
 
     public static bool IsConnected() {
@@ -85,8 +83,6 @@ public class GlipWallet : MonoBehaviour {
             BASE_URL + "?action=logout&provider=google&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Login url: " + url);
         Application.OpenURL(url);
-
-        onDeepLinkActivated("glipwalletunitydemo://loggedOut");
     }
 
     public static void ShowWalletUI() {
@@ -101,8 +97,6 @@ public class GlipWallet : MonoBehaviour {
             BASE_URL + "?action=signMessage&message="+encodedMessage+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Signing message url: " + url);
         Application.OpenURL(url);
-
-        onDeepLinkActivated("glipwalletunitydemo://signMessage?data=0x0");
     }
 
     public static void SignPersonalMessage(string message, WalletSignMessageListener listener) {
@@ -112,8 +106,6 @@ public class GlipWallet : MonoBehaviour {
             BASE_URL + "?action=signPersonalMessage&message="+encodedMessage+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Signing personal message url: " + url);
         Application.OpenURL(url);
-
-        onDeepLinkActivated("glipwalletunitydemo://signPersonalMessage?data=0x0");
     }
 
      public static void SignTransaction(string tx, WalletSignTransactionListener listener) {
@@ -123,8 +115,6 @@ public class GlipWallet : MonoBehaviour {
             BASE_URL + "?action=signTx&txData="+encodedMessage+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Signing tx url: " + url);
         Application.OpenURL(url);
-
-        onDeepLinkActivated("glipwalletunitydemo://signTx?data=0x0");
     }
 
      public static void SendTransaction(string tx, WalletSendTransactionListener listener) {
@@ -134,8 +124,6 @@ public class GlipWallet : MonoBehaviour {
             BASE_URL + "?action=sendTx&txData="+encodedMessage+"&chain="+chainId+"&redirect_scheme="+redirectScheme;
         Debug.Log("glipwallet: Send tx url: " + url);
         Application.OpenURL(url);
-
-        onDeepLinkActivated("glipwalletunitydemo://sendTx?data=0x0");
     }
 
     private static void InternalLogout() {
